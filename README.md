@@ -24,10 +24,14 @@ Please follow the below steps to test your Project-2.
 ## Sample Output Screenshots:
 
 ### Test Case 0
+![test_case_0](sample_output/test0.png)
 
 ### Test Case 1
+![test_case_1](sample_output/test1.png)
 
 ### Test Case 2
+![test_case_2](sample_output/test2.png)
 
 ### Test Case 3
+![test_case_3](sample_output/test3.png)
 
