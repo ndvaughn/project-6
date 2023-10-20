@@ -17,7 +17,7 @@ Please follow the below steps to test your Project-2.
 | 3 | sudo ./test.sh 3 | **Bonus**! The RSS + SWAP results from your kernel module output should match memory pressure. For iteration 1, SWAP size should be 0 (5 pts). For iteration 3,SWAP size should be larger than 0 (5 pts). |10|
 
 ## Note: 
-- For the bonus part (Test case 3), to make SWAP be used, you may need to either shrink your memory size or modify test.sh scripts. If your VM cannot start after shrinking, you need to increase the memory and then modify test.sh to increase the test pressure.
+- For the **bonus** part (Test case 3), to make SWAP be used, you may need to either shrink your memory size or modify test.sh scripts. If your VM cannot start after shrinking, you need to increase the memory back and then modify test.sh to increase the test pressure (Default pressure is 1GB, 2GB and 3GB).
 - You can use print statements in case you want to debug and understand the logic of the test code.
 - Please get in touch with the TAs if you face issues in using the test scripts.
 
