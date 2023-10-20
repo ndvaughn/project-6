@@ -37,7 +37,7 @@ if [[ $1 -le 2 ]]; then
         echo ""
 else
 	# Swap Test Case
-	scalar=0.5
+	scalar=1
 	one_gb=1073741824
 	index=1
 	while [ $index -le 3 ]; do
@@ -73,7 +73,7 @@ else
 		echo ""
 		killall userspace
 		((index++))
-		scalar=$(echo "scala=2; $scalar + 0.5" | bc)
+		scalar=$(echo "scala=2; $scalar + 1" | bc)
 	done
 
 fi
