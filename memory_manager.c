@@ -97,7 +97,7 @@ static void parse_vma(void)
                         // if it is actively used, update wss and clear the accessed bit by: "test_and_clear_bit(_PAGE_BIT_ACCESSED,(unsigned long *)ppte);"
 		    if (pte_young(pte)){
 		        total_wss++;
-			test_and_clear_bit(_PAGE_BIT_ACCESSED, page);
+			    test_and_clear_bit(_PAGE_BIT_ACCESSED, (unsigned long *)ptep);
 		    }
                 }
             }
