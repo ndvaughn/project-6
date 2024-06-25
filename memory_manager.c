@@ -40,12 +40,13 @@ static void parse_vma(void)
                 // TODO 4: Iterate through each page of the VMA 
                 // declear "page" as unsigned long, start from vma->vm_start to vma->vm_end with PAGE_SIZE step 
                 // Hint: Only one line of code is needed
-		for (unsigned long int page = vma->vm_start; page < vma->vm_end; page += PAGE_SIZE){
+		for (unsigned long page = vma->vm_start; page < vma->vm_end; page += PAGE_SIZE){
 
 
                     // TODO 5: Use pgd_offset, p4d_offset, pud_offset, pmd_offset, pte_offset_map to get the page table entry
                     // Hint: Copy from Background Knowledge in the instruction
                     // Hint: change the address in the instruction to "page" variable you defined above
+            
 		    pgd_t *pgd;
 		    p4d_t *p4d;
 		    pud_t *pud;
@@ -87,16 +88,16 @@ static void parse_vma(void)
 
                     // TODO 7: use pte_present(pte) to check if the page is in memory, otherwise it is in swap
 		   if (pte_present(pte)){
-			total_rss++;
+			total_rss += PAGE_SIZE;
 		   }
 		   else{
-			total_swap++;
+			total_swap += PAGE_SIZE;
 		   }
 
                         // TODO 8: use pte_young(pte) to check if the page is actively used
                         // if it is actively used, update wss and clear the accessed bit by: "test_and_clear_bit(_PAGE_BIT_ACCESSED,(unsigned long *)ppte);"
 		    if (pte_young(pte)){
-		        total_wss++;
+		        total_wss += PAGE_SIZE;
 			    test_and_clear_bit(_PAGE_BIT_ACCESSED, (unsigned long *)ptep);
 		    }
                 }
